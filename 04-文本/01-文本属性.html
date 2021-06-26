@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>文本</title>
+</head>
+<style>
+  body {
+    margin: 0;
+    overflow: hidden;
+  }
+
+  #canvas {
+    background-color: antiquewhite;
+    /* width: 100%; */
+  }
+</style>
+
+<body>
+  <canvas id="canvas"></canvas>
+
+  <script>
+    /** @type {HTMLCanvasElement} */
+    const canvas = document.getElementById('canvas');
+    canvas.width = window.innerWidth;
+    canvas.height = window.innerHeight;
+    const ctx = canvas.getContext('2d');
+
+    ctx.font='bold 60px arail';
+    ctx.fillText('好好学习',100,100);
+
+     // start=left end=right center
+     ctx.textAlign='start';
+
+     // top middle bottom  alphabetic子母基线
+     ctx.textBaseline='top'
+
+     
+  </script>
+</body>
+
+</html>

@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>canvas绘图</title>
+</head>
+<style>
+  body {
+    margin: 0;
+    overflow: hidden;
+  }
+
+  #canvas {
+    background-color: antiquewhite;
+    /* width: 100%; */
+  }
+</style>
+
+<body>
+  <canvas id="canvas" width="700" height="800"></canvas>
+
+  <script>
+    /** @type {HTMLCanvasElement} */
+    const canvas = document.getElementById('canvas');
+    canvas.width = window.innerWidth;
+    canvas.height = window.innerHeight;
+    const ctx = canvas.getContext('2d');
+    ctx.strokeStyle = 'maroon'
+    ctx.lineWidth = 40
+    ctx.save()
+    // round  butt
+    ctx.lineJoin = 'mitter'
+    ctx.beginPath()
+    ctx.moveTo(50, 50)
+    ctx.lineTo(400, 50)
+    ctx.stroke()
+    ctx.restore()
+
+    ctx.save()
+    ctx.lineJoin = 'round'
+    ctx.beginPath()
+    ctx.moveTo(50, 150)
+    ctx.lineTo(400, 150)
+    ctx.stroke()
+    ctx.restore()
+
+    ctx.save()
+    ctx.lineJoin = 'bevel'
+    ctx.beginPath()
+    ctx.moveTo(50, 250)
+    ctx.lineTo(400, 250)
+    ctx.stroke()
+    ctx.restore()
+  </script>
+</body>
+
+</html>

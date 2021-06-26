@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>canvas绘图</title>
+</head>
+<style>
+  html {
+    height: 100%;
+    overflow: hidden;
+  }
+
+  body {
+    margin: 0;
+    height: 100%;
+  }
+
+  #canvas {
+    background-color: #000;
+    /* width: 100%; */
+  }
+</style>
+
+<body>
+  <canvas id="canvas"></canvas>
+
+  <script>
+    /** @type {HTMLCanvasElement} */
+    const canvas = document.getElementById('canvas');
+    canvas.width = window.innerWidth;
+    canvas.height = window.innerHeight;
+    const ctx = canvas.getContext('2d');
+    ctx.shadowColor = '#000'
+    ctx.shadowOffsetX = 30
+    ctx.shadowOffsetY = 30
+    ctx.shadowBlur = 30
+    ctx.beginPath()
+    ctx.arc(300, 200, 100, 0, Math.PI * 2)
+    ctx.fillStyle = '#93abff'
+    ctx.fill()
+  </script>
+</body>
+
+</html>

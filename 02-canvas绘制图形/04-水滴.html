@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>canvas绘图</title>
+</head>
+<style>
+  body {
+    margin: 0;
+    overflow: hidden;
+  }
+
+  #canvas {
+    background-color: antiquewhite;
+    /* width: 100%; */
+  }
+</style>
+
+<body>
+  <canvas id="canvas"></canvas>
+
+  <script>
+    /** @type {HTMLCanvasElement} */
+    const canvas = document.getElementById('canvas');
+    canvas.width = window.innerWidth;
+    canvas.height = window.innerHeight;
+    const ctx = canvas.getContext('2d');
+    ctx.fillStyle = '#00acec';
+    ctx.rotate(Math.PI / 12)
+    ctx.translate(300, 300)
+    ctx.beginPath()
+    ctx.moveTo(0, 0)
+    ctx.quadraticCurveTo(50, -50, 50, -100)
+    ctx.arc(0, -100, 50, 0, Math.PI, true)
+    ctx.quadraticCurveTo(-50, -50, 0, 0)
+    ctx.fill()
+  </script>
+</body>
+
+</html>
